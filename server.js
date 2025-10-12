@@ -1,13 +1,14 @@
 const express = require('express');
 const fs = require('fs');
+const cors = require('cors'); // za cross-origin zahteve
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const reactionsFile = 'reactions.json';
 
+app.use(cors()); // dozvoljava sve domene da pristupaju API-ju
 app.use(express.json());
 app.use(express.static('public'));
-
 
 // GET reakcija po textId
 app.get('/get_counts/:textId', (req, res) => {
@@ -35,4 +36,4 @@ app.post('/update_count', (req, res) => {
   res.json({ success: true, counts: reactions[textId] });
 });
 
-app.listen(PORT, () => console.log(`Server radi na http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server radi na portu ${PORT}`));

@@ -153,48 +153,56 @@ function animateEmoji(src, button, count = 1){ // count=1 za jedan emoji po klik
   }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
 
+  const BACKEND_URL = 'https://moj-blog-ie60.onrender.com';
 
-// Povezivanje svih tekstova
-document.querySelectorAll('.tekst').forEach(tekst => {
-  const textId = tekst.dataset.id; // data-id iz HTML-a
-  const likeBtn = tekst.querySelector('.likeBtn');
-  const dislikeBtn = tekst.querySelector('.dislikeBtn');
-  const likeCountDiv = likeBtn.querySelector('.count');
-  const dislikeCountDiv = dislikeBtn.querySelector('.count');
+  // Povezivanje svih tekstova
+  document.querySelectorAll('.tekst').forEach(tekst => {
+    const textId = tekst.dataset.id; // data-id iz HTML-a
+    const likeBtn = tekst.querySelector('.likeBtn');
+    const dislikeBtn = tekst.querySelector('.dislikeBtn');
+    const likeCountDiv = likeBtn.querySelector('.count');
+    const dislikeCountDiv = dislikeBtn.querySelector('.count');
 
-  // Fetchuje brojače i update-uje UI
-  async function fetchCounts(){
-    const res = await fetch(`/get_counts/${textId}`);
-    const data = await res.json();
-    likeCountDiv.textContent = data.like;
-    dislikeCountDiv.textContent = data.dislike;
-  }
+    // Fetchuje brojače i update-uje UI
+    async function fetchCounts(){
+      const res = await fetch(`${BACKEND_URL}/get_counts/${textId}`);
+      const data = await res.json();
+      likeCountDiv.textContent = data.like;
+      dislikeCountDiv.textContent = data.dislike;
+    }
 
-  // Šalje reakciju serveru
-  async function sendReaction(type){
-    await fetch('/update_count', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({textId, type})
+    // Šalje reakciju serveru
+    async function sendReaction(type){
+      await fetch(`${BACKEND_URL}/update_count`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({textId, type})
+      });
+      fetchCounts();
+    }
+
+    // Event listener-i
+    tekst.querySelector('.likeBtn').addEventListener('click', (e) => {
+      animateEmoji('/slike/like.png', e.currentTarget);
+      sendReaction('like');
     });
+
+    tekst.querySelector('.dislikeBtn').addEventListener('click', (e) => {
+      animateEmoji('/slike/dislike.png', e.currentTarget);
+      sendReaction('dislike');
+    });
+
+    // Inicijalno stanje
     fetchCounts();
-  }
+  });
 
-tekst.querySelector('.likeBtn').addEventListener('click', (e) => {
-  animateEmoji('/slike/like.png', e.currentTarget); // e.currentTarget je dugme
-  sendReaction('like');
+  // Share dugmići
+  const pageUrl = encodeURIComponent(window.location.href);
+  const pageTitle = encodeURIComponent(document.title);
+  // ...ostatak koda za share dugmiće
 });
-
-tekst.querySelector('.dislikeBtn').addEventListener('click', (e) => {
-  animateEmoji('/slike/dislike.png', e.currentTarget);
-  sendReaction('dislike');
-});
-
-  // Inicijalno stanje
-  fetchCounts();
-});
-
 // Share dugmići
 document.addEventListener("DOMContentLoaded", () => {
   const pageUrl = encodeURIComponent(window.location.href);

@@ -1,12 +1,19 @@
 const express = require('express');
 const fs = require('fs');
-const cors = require('cors'); // za cross-origin zahteve
+const path = require('path');
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const reactionsFile = 'reactions.json';
+// Apsolutna putanja do reactions.json
+const reactionsFile = path.join(__dirname, 'reactions.json');
 
-app.use(cors()); // dozvoljava sve domene da pristupaju API-ju
+// Ako fajl ne postoji, kreiraj prazan JSON
+if (!fs.existsSync(reactionsFile)) {
+  fs.writeFileSync(reactionsFile, '{}');
+}
+
+app.use(cors()); // dozvoljava sve domene
 app.use(express.json());
 app.use(express.static('public'));
 
@@ -14,10 +21,8 @@ app.use(express.static('public'));
 app.get('/get_counts/:textId', (req, res) => {
   const textId = req.params.textId;
   let reactions = {};
-  if (fs.existsSync(reactionsFile)) {
-    const content = fs.readFileSync(reactionsFile, 'utf8');
-    reactions = content ? JSON.parse(content) : {};
-  }
+  const content = fs.readFileSync(reactionsFile, 'utf8');
+  reactions = content ? JSON.parse(content) : {};
   if (!reactions[textId]) reactions[textId] = { like: 0, hate: 0, confused: 0 };
   res.json(reactions[textId]);
 });
@@ -26,10 +31,8 @@ app.get('/get_counts/:textId', (req, res) => {
 app.post('/update_count', (req, res) => {
   const { textId, type } = req.body;
   let reactions = {};
-  if (fs.existsSync(reactionsFile)) {
-    const content = fs.readFileSync(reactionsFile, 'utf8');
-    reactions = content ? JSON.parse(content) : {};
-  }
+  const content = fs.readFileSync(reactionsFile, 'utf8');
+  reactions = content ? JSON.parse(content) : {};
   if (!reactions[textId]) reactions[textId] = { like: 0, hate: 0, confused: 0 };
   reactions[textId][type]++;
   fs.writeFileSync(reactionsFile, JSON.stringify(reactions, null, 2));

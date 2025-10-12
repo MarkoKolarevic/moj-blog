@@ -635,9 +635,9 @@ body.dark-mode #theme-toggle::before {
     }
 
     #theme-toggle {
-        position: absolute;
+        position: relative;
         top: 5px;
-        left: 30px;
+        left: 15px;
     }
 
     #quote-text {
@@ -646,9 +646,9 @@ body.dark-mode #theme-toggle::before {
     }
 
     #theme-toggle:before {
-        top: 35px;
-        right: 35px;
-        margin: 3px 3px;
+        position: absolute;
+        bottom: 5px;
+        right: 20px;
     }
 
     body.dark-mode #theme-toggle:before {

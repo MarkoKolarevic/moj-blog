@@ -616,28 +616,29 @@ body.dark-mode #theme-toggle::before {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
+        font-size: 30px;
     }
 
     #theme-toggle {
         position: relative;
         top: 3px;
         left: 20px;
+        width: 35px;
+        height: 35px;
     }
 
     #quote-text {
-        font-size: 12px;
-        bottom: 5px;
-        left: 5px;
-        padding: 15px;
-        margin: 15px;
+        font-size: 15px;
+        padding: 30px;
+        background-color: red;
     }
 
     #theme-toggle:before {
         position: absolute;
         bottom: 6px;
         right: 20px;
-        width: 50px;
-        height: 50px;
+        width: 35px;
+        height: 35px;
     }
 
     .index {

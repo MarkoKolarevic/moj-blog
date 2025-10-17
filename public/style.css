@@ -611,15 +611,15 @@ body.dark-mode #theme-toggle::before {
     }
 
     .sidebar.open {
-        width: 80%;
+        width: 100%;
     }
 
     #me img {
-        width: 120px;
+        width: 140px;
     }
 
     #me {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .social-media {
@@ -636,8 +636,8 @@ body.dark-mode #theme-toggle::before {
 
     #quote-text {
         font-size: 15px;
-        bottom: 5px;
-        left: 5px;
+        bottom: 0px;
+        left: 10px;
     }
 
     #theme-toggle:before {

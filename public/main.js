@@ -1,11 +1,13 @@
 function openNav() {
-  document.getElementById("sidebar").style.width = "250px";
-  document.body.style.overflow = "hidden"; // zabrani skrol
+  document.getElementById("sidebar").classList.add("open");
+  document.body.style.overflow = "hidden";
 }
 
 function closeNav() {
-  document.getElementById("sidebar").style.width = "0";
-  document.body.style.overflow = "auto"; // ponovo dozvoli skrol
+  document.getElementById("sidebar").classList.remove("open");
+  document.body.style.overflow = "auto";
+}
+
 
 // Samo na index.html automatski otvori sidebar (osim na telefonu)
 window.addEventListener("load", function() {

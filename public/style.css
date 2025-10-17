@@ -615,11 +615,11 @@ body.dark-mode #theme-toggle::before {
     }
 
     #me img {
-        width: 150px;
+        width: 120px;
     }
 
     #me {
-        font-size: 9px;
+        font-size: 12px;
     }
 
     .social-media {
@@ -636,7 +636,8 @@ body.dark-mode #theme-toggle::before {
 
     #quote-text {
         font-size: 15px;
-        padding: 15px;
+        bottom: 5px;
+        left: 5px;
     }
 
     #theme-toggle:before {

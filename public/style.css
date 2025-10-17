@@ -604,6 +604,10 @@ body.dark-mode #theme-toggle::before {
         width: 100%;
     }
 
+    #lista {
+    margin-top: 25px;
+    }
+
     #me img {
         width: 140px;
     }

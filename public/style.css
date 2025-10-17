@@ -39,6 +39,16 @@ blockquote {
     font-style: italic;
 }
 
+.poetic {
+    text-align: center;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 300;
+    letter-spacing: 0.66px;
+    font-style: italic;
+    color: #666;
+}
+
 h1 {
     text-align: center;
     color: #111;
@@ -247,8 +257,6 @@ ul li {
 
 
 #tekst {
-    line-height: 3.5;
-    letter-spacing: 0.131em;
     font-size: 16px;
     padding: 25px 25px;
 }
@@ -452,8 +460,8 @@ footer {
 
 #scrollToTopBtn:hover {
     width: 44px;
-    height: 44px
-  transition: 0.2s;
+    height: 44px;
+    transition: 0.2s;
 }
 
 #social {
@@ -655,11 +663,11 @@ body.dark-mode #theme-toggle::before {
         margin: 15px;
         bottom: 15px;
     }
-
+    
     span {
-        cursor: pointer;
-        margin: 10px;
-        top: 10px;
+    cursor: pointer;
+    margin: 10px;
+    top: 10px;
     }
     
 }

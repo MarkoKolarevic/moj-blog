@@ -1,6 +1,8 @@
 function openNav() {
   document.getElementById("sidebar").classList.add("open");
-  document.body.style.overflow = "hidden";
+  if (window.innerWidth <= 768) { // samo za telefon/tablet
+    document.body.style.overflow = "hidden";
+  }
 }
 
 function closeNav() {

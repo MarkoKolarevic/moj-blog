@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const quotes = [
   'Za zlo doba nisu krivi zli ljudi, već dobri koji ne čine ništa da se to promeni.',
-  'Ko hoće – nađe način. Ko neće – nađe izgovor.',
+  'Ako nam je priroda da uništavamo, uzalud nam se daje.',
   'Svet se ne menja rečima, već delima onih koji misle drugačije.'
 ];
 

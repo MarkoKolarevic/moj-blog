@@ -39,6 +39,13 @@ blockquote {
     font-style: italic;
 }
 
+.pov {
+    text-align: center;
+    font-size: 20px;
+    margin: 5rem 0;
+    font-weight: 400;
+}
+
 h1 {
     text-align: center;
     color: #111;

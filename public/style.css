@@ -503,7 +503,7 @@ body.dark-mode #theme-toggle::before {
 }
 
 .dark-mode {
-  background-color: #1C1C20;
+  background-color: #0D0D0D;
   color: white;
   transition: 0.3s;
 }
@@ -523,7 +523,7 @@ body.dark-mode #theme-toggle::before {
 }
 
 .dark-mode .sidebar {
-    background-color: #1C1C20;
+    background-color: #0D0D0D;
 }
 
 .dark-mode .read-more {

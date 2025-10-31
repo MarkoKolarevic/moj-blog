@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #FEFCFF;
+    background-color: #CCCCCC;
     color: #333;
 
     font-family: "Ubuntu", sans-serif;
@@ -182,7 +182,7 @@ h2 {
 }
 
 .dislikeBtn:hover {
-    background-color: #F4F3F2;
+    background-color: #C4C4C4;
     color: #333;
     border-radius: 0 24px 24px 0;
 }
@@ -239,7 +239,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 5px;
-    border-bottom: 1px solid #D3D3D3;
+    border-bottom: 1px solid #808080;
 }
 
 ul {
@@ -284,7 +284,7 @@ a:hover {
 }
 
 .sidebar {
-  background-color: #FEFCFF;
+  background-color: #CCCCCC;
   box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.19);
   border-radius: 3px;
   height: 100%;

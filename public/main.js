@@ -246,8 +246,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const quotes = [
   'Za zlo doba nisu krivi zli ljudi, već dobri koji ne čine ništa da se to promeni.',
-  'Ako nam je priroda da uništavamo, uzalud nam se daje.',
-  'Svet se ne menja rečima, već delima onih koji misle drugačije.'
+  'Poslednje što žednom čoveku treba je da se izgubi na putu do izvora. ',
+  'Ptica ostarela u kavezu ne može da leti pod otvorenim nebom.',
+  'Nemati drugog izbora je najbolji izbor.',
+  'Najčešće nismo svesni koliko volimo svoje blato.',
+  'Nije do krompira, već do bašte na kojoj ga sadiš.',
+  'Vrednost je u stvarima o kojima imaš svest.',
+  'Svest da u svojim rukama držiš nešto dragoceno – vrednija je od dragocenosti koja ti je u rukama.',
+  'Ne bacaj ljude u lance, samo im ubij svest o sopstvenoj vrednosti – sami će da legnu u kavez.',
+  'Sistem ne gura čoveka sa litice, samo ga primorava da skoči. Rezultat je isti – izgubili smo čoveka.',
+  'Promena je teška zbog gotove slike o sebi.',
+  'Ne „možeš“ kao reč, nego "evo" kao dokaz. ',
+  'Nada je velika, ali je veće iskustvo koje razuverava. '
 ];
 
 let current = 0;

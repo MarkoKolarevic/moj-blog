@@ -479,7 +479,7 @@ body.dark-mode #theme-toggle::before {
 
 .dark-mode .sidebar {
     background-color: #0D0D0D;
-    box-shadow: 3px 3px 3px 0px rgba(236, 236, 236, 1);
+    box-shadow: 0px 0px 1px 0px rgba(236, 236, 236, 0.50);
 }
 
 .dark-mode .read-more {
@@ -512,7 +512,7 @@ body.dark-mode #theme-toggle::before {
 }
 
 .dark-mode .blog-post {
-    box-shadow: 0px 0px 3px 0px rgba(236, 236, 236, 1);
+    box-shadow: 0px 0px 1px 0px rgba(236, 236, 236, 0.50);
 }
 
 /* Stil za progress bar */

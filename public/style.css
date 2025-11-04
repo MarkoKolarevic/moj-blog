@@ -102,7 +102,7 @@ h2 {
     align-items: center;
     margin: 5px;
     padding: 30px;
-    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.50);
     border-radius: 3px;
 }
 
@@ -268,7 +268,7 @@ a:hover {
 
 .sidebar {
     background-color: white;
-    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.50);
     border-radius: 3px;
     height: 100%;
     position: fixed;
@@ -461,7 +461,6 @@ body.dark-mode #theme-toggle::before {
 .dark-mode {
   background-color: #0D0D0D;
   color: white;
-  transition: 0.3s;
 }
 
 .dark-mode h1 {
@@ -480,7 +479,7 @@ body.dark-mode #theme-toggle::before {
 
 .dark-mode .sidebar {
     background-color: #0D0D0D;
-    box-shadow: 3px 3px 3px 0px rgba(236, 236, 236, 0.20);
+    box-shadow: 3px 3px 3px 0px rgba(236, 236, 236, 1);
 }
 
 .dark-mode .read-more {

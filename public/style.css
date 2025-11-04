@@ -108,14 +108,6 @@ h2 {
     border-radius: 3px;
 }
 
-.clip {
-    text-align: center;
-    font-weight: 200;
-    font-style: italic;
-    font-size: 18px;
-    padding: 40px;
-}
-
 .read-more {
   display: inline-block;
   margin-top: 10px;
@@ -399,22 +391,6 @@ footer {
     margin: 3em 0 5em 0;
 }
 
-#quote-text {
-    font-size: 25px;
-    font-style: italic;
-    color: #555;
-    font-weight: 400;
-    max-width: 800px;
-    margin: 0 auto;
-    transition: opacity 0.6s ease;
-}
-
-#quote-text::before {
-    content: "“";
-    font-size: 55px;
-    color: #aaa;
-}
-
 
 .social {
     text-decoration: none;
@@ -541,7 +517,9 @@ body.dark-mode #theme-toggle::before {
     background-color: white;
 }
 
-
+.blog-post {
+    box-shadow: 0px 0px 1px 0px rgba(236, 236, 236, 0.20);
+}
 
 /* Stil za progress bar */
 #progress-bar {
@@ -639,10 +617,6 @@ body.dark-mode #theme-toggle::before {
     .index {
         letter-spacing: 0em;
 }
-
-    .clip {
-        padding: 20px;
-    }
 
     .year {
         margin: 25px;

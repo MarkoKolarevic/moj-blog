@@ -2,11 +2,11 @@
 
 * {
     box-sizing: border-box;
-    background-color: #ECECEC;
 }
 body {
     margin: 0;
     padding: 0;
+    background-color: #ECECEC;
     color: #333;
 
     font-family: "Ubuntu", sans-serif;
@@ -111,12 +111,12 @@ h2 {
     align-items: center;
     margin: 5px;
     padding: 30px;
-    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.20);
     border-radius: 3px;
 }
 
 .clip {
-    letter-spacing: 0.05em;
+    text-align: center;
     font-weight: 200;
     font-style: italic;
     font-size: 18px;
@@ -401,32 +401,25 @@ span {
 }
 
 footer {
-  text-align: center;
+    text-align: center;
     padding: 30px;
     margin: 3em 0 5em 0;
 }
 
 #quote-text {
-  font-size: 25px;
-  font-style: italic;
-  color: #555;
-  font-weight: 400;
-  max-width: 800px;
-  margin: 0 auto;
-  transition: opacity 0.6s ease;
-  line-height: 1.5;
-  position: absolute;
-  bottom: 35px;
-  left: 35px;
+    font-size: 25px;
+    font-style: italic;
+    color: #555;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: opacity 0.6s ease;
 }
 
 #quote-text::before {
-  content: "“";
-  font-size: 55px;
-  position: absolute;
-  left: -25px;
-  top: -20px;
-  color: #aaa;
+    content: "“";
+    font-size: 55px;
+    color: #aaa;
 }
 
 

@@ -2,9 +2,7 @@
 
 * {
     box-sizing: border-box;
-    margin:0; 
-    min-height:100%; 
-    background:#ECECEC;
+    background-color: #ECECEC;
 }
 body {
     margin: 0;
@@ -408,6 +406,30 @@ footer {
     margin: 3em 0 5em 0;
 }
 
+#quote-text {
+  font-size: 25px;
+  font-style: italic;
+  color: #555;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+  transition: opacity 0.6s ease;
+  line-height: 1.5;
+  position: absolute;
+  bottom: 35px;
+  left: 35px;
+}
+
+#quote-text::before {
+  content: "“";
+  font-size: 55px;
+  position: absolute;
+  left: -25px;
+  top: -20px;
+  color: #aaa;
+}
+
+
 .social {
     text-decoration: none;
     padding: 4px;
@@ -618,6 +640,14 @@ body.dark-mode #theme-toggle::before {
         left: 20px;
         width: 35px;
         height: 35px;
+    }
+
+    #quote-text {
+        font-size: 12px;
+        bottom: 5px;
+        left: 5px;
+        padding: 15px;
+        margin: 15px;
     }
 
     #theme-toggle:before {

@@ -6,6 +6,7 @@
 
 body {
     margin: 0;
+    padding: 0;
 
     color: #333;
 
@@ -13,6 +14,8 @@ body {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+
+    transition: color 0.2s;
 }
 
 main {
@@ -23,70 +26,37 @@ main {
 
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-
-        box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.50);
+    justify-content: end;
+    position: sticky;
+    top: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 35px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.50);
     border-radius: 3px;
 }
 
-blockquote {
-    margin: 4rem 2.5rem;
-    padding-left: 1rem;
-    font-size: 16px;
-    border-left: 1px solid #2B2A33;
-    color: #555;
-    font-style: italic;
+header.shrink {
+    padding: 15px;
+    background-color: white;
 }
 
-h1 {
-    text-align: center;
-    color: #111;
-    letter-spacing: 0.02em;
-    line-height: 50px;
-    font-size: 50px;
-    font-weight: 300;
-    margin-top: 2em;
+header.hide {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
 }
 
-h2 {
-    text-align: center;
-    color: #111;
-    letter-spacing: 0.02em;
-    line-height: 25px;
-    font-size: 25px;
-    font-weight: 300;
-    margin: 1em 0;
-}
-
-.summary {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 50px;
-    letter-spacing: 0.15em;
-}
-
-.summary a {
-    font-weight: 400;
-    color: #808080;
-}
-
-.summary a:hover {
-    transition: 0.2s;
-    color: #333;
-    font-weight: 600;
-}
-
-
-.index {
-    display: flex;
-    flex-direction: column;
-    padding: 50px 0px;
-    width: 45%;
-    font-size: 17px;
-    line-height: 1.5;
+/* Stil za progress bar */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%; /* Početna širina je 0% */
+    height: 3px;
+    background-color: #1B2021;
+    z-index: 9999; /* Da bude iznad ostalog sadržaja */
+    transition: 0.25s ease-out;
 }
 
 .post {
@@ -110,7 +80,6 @@ h2 {
 }
 
 .read-more {
-  display: inline-block;
   margin-top: 10px;
   padding: 8px 16px;
   border: 1px solid #ccc;
@@ -121,146 +90,8 @@ h2 {
 }
 
 .read-more:hover {
-  background-color: #333;
-  color: #f4f3f2;
   border-color: #333;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    margin: 2.5rem 0;
-    font-size:24px;
-    padding: 5px;
-}
-
-.social-links i {
-    margin: 0 5px;
-}
-
-.social-links i:hover  {
-    transition: transform 0.2s;
-    transform: scale(1.1);
-}
-
-.reactions {
-    display: flex;
-    justify-content: center;
-    border: 1px solid gray;
-    border-radius: 24px;
-}
-
-.reactions button {
-    padding: 5px;
-    cursor: pointer;
-}
-
-.likeBtn:hover {
-    background-color: #C4C4C4;
-    color: #333;
-    border-radius: 24px 0 0 24px;
-}
-
-.dislikeBtn:hover {
-    background-color: #C4C4C4;
-    color: #333;
-    border-radius: 0 24px 24px 0;
-}
-
-.likeBtn img,
-.dislikeBtn img {
-  width: 24px;   /* manja veličina */
-  height: 24px;
-  vertical-align: middle; /* poravnanje sa tekstom ako ga ima */
-  cursor: pointer;
-  margin: 0 5px;
-}
-
-.likeBtn, .dislikeBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none; /* ne dozvoljava selekciju */
-    -webkit-user-select: none; /* za Safari/Chrome */
-    -moz-user-select: none; /* za Firefox */
-    -ms-user-select: none; /* za IE/Edge */
-    cursor: pointer; /* pokazivač ruke */
-}
-
-.counts {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    font-weight: bold;
-    line-height: 1;
-}
-
-.year {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 600;
-    margin-top: 55px;
-}
-
-.month {
-    padding-top: 50px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 500;
-}
-
-.resluts {
-    display: flex;
-    flex-direction: column;
-}
-
-.title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    border-bottom: 1px solid #808080;
-}
-
-ul {
-    display: flex;
-    padding: 0;
-    list-style: none;
-}
-
-ul li {
-    margin: 5px;
-}
-
-
-#tekst {
-    font-size: 16px;
-    padding: 25px 25px;
-}
-
-
-.links {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-
-.hidden {
-  transform: translateY(-100%);
-}
-
-button {
-    all: unset;
-}
-
-a {
-    color: #333;
-    text-decoration: none;
-}
-
-a:hover {
-    font-weight: 400;
+  font-weight: 600;
 }
 
 .sidebar {
@@ -269,35 +100,35 @@ a:hover {
     border-radius: 3px;
     height: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 2000;
     top: 0;
-    left: 0;
+    right: 0;
     overflow: hidden;
     width: 0; /* default zatvoren */
+    transition: 0.3s;
 }
 
 .sidebar .closebtn {
     position: absolute;
-    top: 35px;
-    right: 35px;
-    font-size: 45px;
-    font-weight: 100;
-    color: #333;
-    text-decoration: none;
+    top: 30px;
+    right: 42px;
+    font-size: 35px;
 }
 
 span {
-    position: fixed;
-    top: 0;
-    left: 0;
     background-image: url("slike/menu.png");
     background-size: contain;
     background-repeat: no-repeat;
 
-    margin: 50px;
     width: 35px;
     height: 35px;
 }
+
+span:hover {
+    transform: scale(1.1);
+    transition: all 0.1s ease-out;
+}
+
 
 .sidebar.open {
     width: 500px;
@@ -319,47 +150,6 @@ span {
     margin: 15px 0;
 }
 
-.social-media {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 5px;
-    font-size: 45px;
-}
-
-.social-media i:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
-  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-
-}
-
-.navigation {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    line-height: 1.5;
-}
-
-.navigation p {
-    font-size: 16px;
-    text-align: center;
-    font-weight: 300;
-}
-
-.navigation a {
-    font-weight: 400;
-    color: #808080;
-    border-bottom: 1px solid #808080;
-}
-
-.navigation a:hover {
-    transition: 0.2s;
-    color: #333;
-    font-weight: 600;
-    border-bottom: 1.5px solid #333;
-}
-
 #me {
     text-align: center;
     font-size: 12px;
@@ -378,46 +168,18 @@ span {
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 2);
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    margin: 3em 0 5em 0;
+.social-media {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    font-size: 45px;
 }
 
-
-.social {
-    text-decoration: none;
-    padding: 4px;
-}
-
-.social:hover {
-    color: #2A3133;
-}
-
-#scrollToTopBtn {
-    display: none; /* Početno je skriveno */
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 50px;
-    width: 45px;
-    height: 45px;
-
-    background-image: url("slike/up-arrow.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-#scrollToTopBtn:hover {
-    width: 44px;
-    height: 44px;
-    transition: 0.2s;
-}
-
-#social {
-  margin-top: 20px;
-  text-align: center;
-  position: relative;
+.social-media i:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 
 #theme-toggle {
@@ -449,15 +211,202 @@ footer {
   filter: brightness(1.2);
 }
 
+/*BLOG STRANICA*/
+.year {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 55px;
+}
+
+.month {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #808080;
+}
+
+/*NEWS STRANICA*/
+ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    margin: 5px;
+}
+
+/*ostalo*/
+
+h1 {
+    text-align: center;
+    color: #111;
+    letter-spacing: 0.02em;
+    line-height: 50px;
+    font-size: 50px;
+    font-weight: 300;
+    margin-top: 2em;
+}
+
+h2 {
+    text-align: center;
+    color: #111;
+    letter-spacing: 0.02em;
+    line-height: 25px;
+    font-size: 25px;
+    font-weight: 300;
+    margin: 1em 0;
+}
+
+blockquote {
+    margin: 2.5rem;
+    padding-left: 1rem;
+    font-size: 15px;
+    border-left: 1px solid #555;
+    color: #555;
+}
+
+/* Autor i datum objavljivanja */
+.summary {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 50px;
+    letter-spacing: 0.15em;
+}
+
+/*Share*/
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0;
+    font-size:24px;
+    padding: 5px;
+}
+
+.social-links i {
+    margin: 0 5px;
+}
+
+.social-links i:hover  {
+    transition: transform 0.2s;
+    transform: scale(1.1);
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+button {
+    all: unset;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: 400;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.navigation p {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.navigation a {
+    font-weight: 400;
+    color: #808080;
+    border-bottom: 1px solid #808080;
+}
+
+.navigation a:hover {
+    transition: 0.2s;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 1.5px solid #333;
+}
+
+#scrollToTopBtn {
+    display: none; /* Početno je skriveno */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
+    
+    width: 35px;
+    height: 35px;
+
+    background-image: url("slike/up-arrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#scrollToTopBtn:hover {
+    transform: scale(1.2);
+    transition: all 0.3s;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    margin: 3em 0 5em 0;
+}
+
+#quote-text {
+  font-size: 25px;
+  font-style: italic;
+  color: #aaa;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 15px auto;
+  transition: opacity 0.6s ease;
+}
+
+#quote-text::before {
+  content: "“";
+  font-size: 24px;
+  font-weight: 900;
+  color: #aaa;
+}
+
+/*darkmode*/
+
+.dark-mode {
+  background-color: #0D0D0D;
+  color: white;
+}
 
 body.dark-mode #theme-toggle::before {
   background-image: url("slike/day-mode-dark.png");
   border-radius: 50%;
 }
 
-.dark-mode {
-  background-color: #0D0D0D;
-  color: white;
+.dark-mode header {
+    box-shadow: 0px 0px 1px 0px rgba(236, 236, 236, 0.50);
+}
+
+.dark-mode header.shrink {
+    padding: 15px;
+    background-color: #0D0D0D;    
 }
 
 .dark-mode h1 {
@@ -512,17 +461,6 @@ body.dark-mode #theme-toggle::before {
     box-shadow: 0px 0px 1px 0px rgba(236, 236, 236, 0.50);
 }
 
-/* Stil za progress bar */
-#progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%; /* Početna širina je 0% */
-    height: 3px;
-    background-color: #1B2021;
-    z-index: 9999; /* Da bude iznad ostalog sadržaja */
-    transition: 0.25s ease-out;
-}
 
 /* Laptop */
 @media (max-width: 1366px) {
@@ -534,14 +472,6 @@ body.dark-mode #theme-toggle::before {
     .post {
         width: 50%;
         font-size: 17px;
-    }
-
-    .index {
-        width: 80%;
-    }
-
-    #tekst {
-        line-height: 3;
     }
 
 }
@@ -556,15 +486,6 @@ body.dark-mode #theme-toggle::before {
 
     blockquote {
         margin: 3rem 1.5rem;
-    }
-
-    #tekst {
-        margin-top: 50px;
-        line-height: 2;
-    }
-
-    .index {
-        width: 100%;
     }
 
     .sidebar.open {
@@ -584,9 +505,6 @@ body.dark-mode #theme-toggle::before {
     }
 
     .social-media {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
         font-size: 30px;
     }
 
@@ -604,10 +522,6 @@ body.dark-mode #theme-toggle::before {
         right: 20px;
         width: 35px;
         height: 35px;
-    }
-
-    .index {
-        letter-spacing: 0em;
     }
 
     .year {

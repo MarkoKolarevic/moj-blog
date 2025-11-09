@@ -1,0 +1,628 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    color: #333;
+
+    font-family: "Ubuntu", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+
+        box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.50);
+    border-radius: 3px;
+}
+
+blockquote {
+    margin: 4rem 2.5rem;
+    padding-left: 1rem;
+    font-size: 16px;
+    border-left: 1px solid #2B2A33;
+    color: #555;
+    font-style: italic;
+}
+
+h1 {
+    text-align: center;
+    color: #111;
+    letter-spacing: 0.02em;
+    line-height: 50px;
+    font-size: 50px;
+    font-weight: 300;
+    margin-top: 2em;
+}
+
+h2 {
+    text-align: center;
+    color: #111;
+    letter-spacing: 0.02em;
+    line-height: 25px;
+    font-size: 25px;
+    font-weight: 300;
+    margin: 1em 0;
+}
+
+.summary {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 50px;
+    letter-spacing: 0.15em;
+}
+
+.summary a {
+    font-weight: 400;
+    color: #808080;
+}
+
+.summary a:hover {
+    transition: 0.2s;
+    color: #333;
+    font-weight: 600;
+}
+
+
+.index {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px;
+    width: 45%;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    line-height: 25px;
+    margin-bottom: 1em;
+}
+
+.blog-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    padding: 30px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.50);
+    border-radius: 3px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  background-color: #333;
+  color: #f4f3f2;
+  border-color: #333;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0;
+    font-size:24px;
+    padding: 5px;
+}
+
+.social-links i {
+    margin: 0 5px;
+}
+
+.social-links i:hover  {
+    transition: transform 0.2s;
+    transform: scale(1.1);
+}
+
+.reactions {
+    display: flex;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 24px;
+}
+
+.reactions button {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.likeBtn:hover {
+    background-color: #C4C4C4;
+    color: #333;
+    border-radius: 24px 0 0 24px;
+}
+
+.dislikeBtn:hover {
+    background-color: #C4C4C4;
+    color: #333;
+    border-radius: 0 24px 24px 0;
+}
+
+.likeBtn img,
+.dislikeBtn img {
+  width: 24px;   /* manja veličina */
+  height: 24px;
+  vertical-align: middle; /* poravnanje sa tekstom ako ga ima */
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.likeBtn, .dislikeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none; /* ne dozvoljava selekciju */
+    -webkit-user-select: none; /* za Safari/Chrome */
+    -moz-user-select: none; /* za Firefox */
+    -ms-user-select: none; /* za IE/Edge */
+    cursor: pointer; /* pokazivač ruke */
+}
+
+.counts {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.year {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 55px;
+}
+
+.month {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.resluts {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #808080;
+}
+
+ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    margin: 5px;
+}
+
+
+#tekst {
+    font-size: 16px;
+    padding: 25px 25px;
+}
+
+
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+button {
+    all: unset;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: 400;
+}
+
+.sidebar {
+    background-color: white;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.50);
+    border-radius: 3px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 0; /* default zatvoren */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    font-size: 45px;
+    font-weight: 100;
+    color: #333;
+    text-decoration: none;
+}
+
+span {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("slike/menu.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    margin: 50px;
+    width: 35px;
+    height: 35px;
+}
+
+.sidebar.open {
+    width: 500px;
+}
+
+#lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+#lista a {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    font-size: 45px;
+}
+
+.social-media i:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.navigation p {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.navigation a {
+    font-weight: 400;
+    color: #808080;
+    border-bottom: 1px solid #808080;
+}
+
+.navigation a:hover {
+    transition: 0.2s;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 1.5px solid #333;
+}
+
+#me {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    line-height: 35px;
+    padding-bottom: 25px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid gray;
+}
+
+#me img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 2);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    margin: 3em 0 5em 0;
+}
+
+
+.social {
+    text-decoration: none;
+    padding: 4px;
+}
+
+.social:hover {
+    color: #2A3133;
+}
+
+#scrollToTopBtn {
+    display: none; /* Početno je skriveno */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 50px;
+    width: 45px;
+    height: 45px;
+
+    background-image: url("slike/up-arrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#scrollToTopBtn:hover {
+    width: 44px;
+    height: 44px;
+    transition: 0.2s;
+}
+
+#social {
+  margin-top: 20px;
+  text-align: center;
+  position: relative;
+}
+
+#theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#theme-toggle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 45px;
+  height: 45px;
+  background-image: url("slike/night-mode.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 20%;
+  transition: 0.3s;
+}
+
+#theme-toggle:hover::before {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+
+body.dark-mode #theme-toggle::before {
+  background-image: url("slike/day-mode-dark.png");
+  border-radius: 50%;
+}
+
+.dark-mode {
+  background-color: #0D0D0D;
+  color: white;
+}
+
+.dark-mode h1 {
+    color: white;
+    transition: 0.3s;
+}
+
+.dark-mode h2 {
+    color: white;
+    transition: 0.3s;
+}
+
+.dark-mode span {
+    background-image: url("slike/menu-dark.png");
+}
+
+.dark-mode .sidebar {
+    background-color: #0D0D0D;
+    box-shadow: 0px 0px 1px 0px rgba(236, 236, 236, 0.50);
+}
+
+.dark-mode .read-more {
+    background-color: gray;
+}
+
+.dark-mode blockquote {
+    color: white;
+}
+
+.dark-mode a {
+    color: white;
+}
+
+.dark-mode a:hover {
+    color: red;
+    font-weight: 400;
+}
+
+.dark-mode .closebtn {
+    color: white;
+}
+
+.dark-mode #scrollToTopBtn {
+    background-image: url("slike/up-arrow-dark.png");
+}
+
+.dark-mode #progress-bar {
+    background-color: white;
+}
+
+.dark-mode .blog-post {
+    box-shadow: 0px 0px 1px 0px rgba(236, 236, 236, 0.50);
+}
+
+/* Stil za progress bar */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%; /* Početna širina je 0% */
+    height: 3px;
+    background-color: #1B2021;
+    z-index: 9999; /* Da bude iznad ostalog sadržaja */
+    transition: 0.25s ease-out;
+}
+
+/* Laptop */
+@media (max-width: 1366px) {
+  
+  .sidebar.open {
+    width: 300px;
+  }
+
+    .post {
+        width: 50%;
+        font-size: 17px;
+    }
+
+    .index {
+        width: 80%;
+    }
+
+    #tekst {
+        line-height: 3;
+    }
+
+}
+
+/* Stil za mobilne uređaje */
+@media only screen and (max-width: 768px) {
+
+    .post {
+        width: 90%;
+        font-size: 17px;
+    }
+
+    blockquote {
+        margin: 3rem 1.5rem;
+    }
+
+    #tekst {
+        margin-top: 50px;
+        line-height: 2;
+    }
+
+    .index {
+        width: 100%;
+    }
+
+    .sidebar.open {
+        width: 100%;
+    }
+
+    #lista {
+    margin-top: 25px;
+    }
+
+    #me img {
+        width: 140px;
+    }
+
+    #me {
+        font-size: 10px;
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        font-size: 30px;
+    }
+
+    #theme-toggle {
+        position: relative;
+        top: 3px;
+        left: 20px;
+        width: 35px;
+        height: 35px;
+    }
+
+    #theme-toggle:before {
+        position: absolute;
+        bottom: 6px;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .index {
+        letter-spacing: 0em;
+    }
+
+    .year {
+        margin: 25px;
+    }
+
+    #scrollToTopBtn {
+        margin: 15px;
+        bottom: 15px;
+    }
+    
+    span {
+    cursor: pointer;
+    margin: 10px;
+    top: 10px;
+    }
+    
+}

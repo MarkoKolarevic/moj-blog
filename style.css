@@ -37,7 +37,7 @@ header {
 }
 
 header.shrink {
-    padding: 15px;
+    padding: 5x;
     background-color: white;
 }
 
@@ -75,8 +75,6 @@ header.hide {
     align-items: center;
     margin: 5px;
     padding: 30px;
-    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.50);
-    border-radius: 3px;
 }
 
 .read-more {
@@ -271,7 +269,7 @@ blockquote {
     margin: 2.5rem;
     padding-left: 1rem;
     font-size: 15px;
-    border-left: 1px solid #555;
+    border-left: 1px solid #ccc;
     color: #555;
 }
 
@@ -433,7 +431,7 @@ body.dark-mode #theme-toggle::before {
 }
 
 .dark-mode blockquote {
-    color: white;
+    color: #ccc;
 }
 
 .dark-mode a {
@@ -457,10 +455,6 @@ body.dark-mode #theme-toggle::before {
     background-color: white;
 }
 
-.dark-mode .blog-post {
-    box-shadow: 0px 0px 1px 0px rgba(236, 236, 236, 0.50);
-}
-
 
 /* Laptop */
 @media (max-width: 1366px) {
@@ -478,6 +472,10 @@ body.dark-mode #theme-toggle::before {
 
 /* Stil za mobilne uređaje */
 @media only screen and (max-width: 768px) {
+
+    header {
+        padding: 10px;
+    }    
 
     .post {
         width: 90%;
@@ -531,9 +529,7 @@ body.dark-mode #theme-toggle::before {
     }
     
     span {
-    cursor: pointer;
     margin: 10px;
-    top: 10px;
     }
     
 }

@@ -347,9 +347,9 @@ a:hover {
     display: none; /* Početno je skriveno */
     
     position: fixed;
-    bottom: 35px;
-    right: 0;
-    margin: 15px;
+    bottom: 10px;
+    right: 0px;
+    margin: 10px;
     
     width: 35px;
     height: 35px;
@@ -475,7 +475,7 @@ body.dark-mode #theme-toggle::before {
 @media only screen and (max-width: 768px) {
 
     header {
-        padding: 10px;
+        padding: 15px;
     }    
 
     .post {
@@ -525,12 +525,7 @@ body.dark-mode #theme-toggle::before {
     }
 
     #scrollToTopBtn {
-        margin: 25px;
-        bottom: 5px;
-    }
-    
-    span {
-    margin: 10px;
+        margin: 10px;
     }
     
 }

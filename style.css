@@ -348,7 +348,7 @@ a:hover {
 #scrollToTopBtn {
     display: none; /* Početno je skriveno */
     position: fixed;
-    bottom: 0;
+    bottom: 35px;
     right: 0;
     margin: 15px;
     
@@ -530,7 +530,7 @@ body.dark-mode #theme-toggle::before {
 
     #scrollToTopBtn {
         margin: 15px;
-        bottom: 15px;
+        bottom: 5px;
     }
     
     span {

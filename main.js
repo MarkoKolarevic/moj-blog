@@ -6,18 +6,44 @@ function closeNav() {
   document.getElementById("sidebar").classList.remove("open");
 }
 
-// Samo na index.html automatski otvori sidebar (osim na telefonu)
-window.addEventListener("load", function() {
-  const sidebar = document.getElementById("sidebar");
-  const isIndex = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
-  const isAbout = window.location.pathname.endsWith("about.html") || window.location.pathname === "/";
+document.addEventListener("DOMContentLoaded", () => {
+  const path = location.pathname;
+  const isIndex = path === "/" || path.endsWith("/index.html");
+  const isAbout = path.endsWith("/about.html");
 
-  if (isIndex && window.innerWidth > 768) {
+  // Sidebar auto-open samo na index/about i samo na desktopu
+  const sidebar = document.getElementById("sidebar");
+  if (sidebar && (isIndex || isAbout) && window.innerWidth > 768) {
     sidebar.classList.add("open");
   }
 
-  if (isAbout && window.innerWidth > 768) {
-    sidebar.classList.add("open");
+  // Citat radi SAMO na indexu (i samo ako postoji #quote-text)
+  const quoteText = document.getElementById("quote-text");
+  if (isIndex && quoteText) {
+    const quotes = [
+      'Za zlo doba nisu krivi zli ljudi, već dobri koji ne čine ništa da se to promeni.',
+      'Poslednje što žednom čoveku treba je da se izgubi na putu do izvora. ',
+      'Ptica ostarela u kavezu ne može da leti pod otvorenim nebom.',
+      'Nemati drugog izbora je najbolji izbor.',
+      'Najčešće nismo svesni koliko volimo svoje blato.',
+      'Nije do krompira, već do bašte na kojoj ga sadiš.',
+      'Vrednost je u stvarima o kojima imaš svest.',
+      'Svest da u svojim rukama držiš nešto dragoceno – vrednija je od dragocenosti koja ti je u rukama.',
+      'Sistem ne gura čoveka sa litice, samo ga primorava da skoči. Rezultat je isti – izgubili smo čoveka.',
+      'Ne „možeš“ kao reč, nego "evo" kao dokaz. ',
+      'Nada je velika, ali je veće iskustvo koje razuverava. '
+    ];
+
+    let current = 0;
+    function changeQuote() {
+      quoteText.style.opacity = 0;
+      setTimeout(() => {
+        current = (current + 1) % quotes.length;
+        quoteText.textContent = quotes[current];
+        quoteText.style.opacity = 1;
+      }, 400);
+    }
+    setInterval(changeQuote, 10000);
   }
 });
 
@@ -161,32 +187,3 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 });
-
-const quotes = [
-  'Za zlo doba nisu krivi zli ljudi, već dobri koji ne čine ništa da se to promeni.',
-  'Poslednje što žednom čoveku treba je da se izgubi na putu do izvora. ',
-  'Ptica ostarela u kavezu ne može da leti pod otvorenim nebom.',
-  'Nemati drugog izbora je najbolji izbor.',
-  'Najčešće nismo svesni koliko volimo svoje blato.',
-  'Nije do krompira, već do bašte na kojoj ga sadiš.',
-  'Vrednost je u stvarima o kojima imaš svest.',
-  'Svest da u svojim rukama držiš nešto dragoceno – vrednija je od dragocenosti koja ti je u rukama.',
-  'Sistem ne gura čoveka sa litice, samo ga primorava da skoči. Rezultat je isti – izgubili smo čoveka.',
-  'Ne „možeš“ kao reč, nego "evo" kao dokaz. ',
-  'Nada je velika, ali je veće iskustvo koje razuverava. '
-];
-
-let current = 0;
-const quoteText = document.getElementById("quote-text");
-
-function changeQuote() {
-  quoteText.style.opacity = 0;
-  setTimeout(() => {
-    current = (current + 1) % quotes.length;
-    quoteText.textContent = quotes[current];
-    quoteText.style.opacity = 1;
-  }, 400);
-}
-
-// menja citat svakih 10 sekundi
-setInterval(changeQuote, 10000);

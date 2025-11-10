@@ -1,15 +1,10 @@
 function openNav() {
   document.getElementById("sidebar").classList.add("open");
-  if (window.innerWidth <= 768) { // samo za telefon/tablet
-    document.body.style.overflow = "hidden";
-  }
 }
 
 function closeNav() {
   document.getElementById("sidebar").classList.remove("open");
-  document.body.style.overflow = "auto";
 }
-
 
 // Samo na index.html automatski otvori sidebar (osim na telefonu)
 window.addEventListener("load", function() {
@@ -27,41 +22,46 @@ window.addEventListener("load", function() {
 });
 
 
-    // Funkcija koja ažurira progres bar
+// Funkcija koja ažurira progres bar
 function updateProgressBar() {
-    // Izračunavanje koliko je stranica skrolovana
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    var docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-    var winHeight = window.innerHeight;
-    
-    var scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
-    
-    // Postavljanje širine progress bar-a
-    document.getElementById("progress-bar").style.width = scrollPercent + "%";
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+  const winHeight = window.innerHeight;
+  const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+  document.getElementById("progress-bar").style.width = scrollPercent + "%";
 }
 
-// Selektuj dugme za skrolovanje na vrh
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+const header = document.querySelector("header");
 
-// Događaj za skrolovanje
+let lastScrollTop = 0; // prati smer skrolovanja
+
 window.onscroll = function() {
-    // Ažuriraj progres bar
-    updateProgressBar();
-    
-    // Prikazivanje dugmeta za skrolovanje na vrh
-    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
-        scrollToTopBtn.style.display = "block";
-    } else {
-        scrollToTopBtn.style.display = "none";
-    }
+  updateProgressBar();
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+  // 1) dugme za vrh
+  scrollToTopBtn.style.display = scrollTop > 1000 ? "block" : "none";
+
+  // 2) smanji header
+  if (scrollTop > 10) header.classList.add("shrink");
+  else header.classList.remove("shrink");
+
+  // 3) pametno sakrivanje headera
+  if (scrollTop > lastScrollTop && scrollTop > 120) {
+    // skroluješ NA DOLE
+    header.classList.add("hide");
+  } else {
+    // skroluješ NA GORE
+    header.classList.remove("hide");
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // reset da ne ide u minus
 };
 
-// Kada korisnik klikne na dugme, vrati ga na vrh stranice
-scrollToTopBtn.addEventListener("click", function() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth" // Dodaje glatko pomeranje prema vrhu
-    });
+// klik na vrh
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 

@@ -37,7 +37,7 @@ header {
 }
 
 header.shrink {
-    padding: 5x;
+    padding: 10px;
     background-color: white;
 }
 
@@ -345,6 +345,7 @@ a:hover {
 
 #scrollToTopBtn {
     display: none; /* Početno je skriveno */
+    
     position: fixed;
     bottom: 35px;
     right: 0;
@@ -403,7 +404,7 @@ body.dark-mode #theme-toggle::before {
 }
 
 .dark-mode header.shrink {
-    padding: 15px;
+    padding: 10px;
     background-color: #0D0D0D;    
 }
 
@@ -524,7 +525,7 @@ body.dark-mode #theme-toggle::before {
     }
 
     #scrollToTopBtn {
-        margin: 15px;
+        margin: 25px;
         bottom: 5px;
     }
     

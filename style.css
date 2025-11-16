@@ -232,6 +232,12 @@ span:hover {
     border-bottom: 1px solid #808080;
 }
 
+.title a:hover {
+    transition: 0.2s;
+    color: #333;
+    font-weight: 600;
+}
+
 /*NEWS STRANICA*/
 ul {
     display: flex;
